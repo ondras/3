@@ -41,3 +41,12 @@ main {
 canvas {
 	max-width: 100%;
 }
+
+form.disabled {
+	animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+	from { box-shadow: none; }
+	to { box-shadow: 0 0 4px 4px dodgerblue; }
+}

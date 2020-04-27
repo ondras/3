@@ -5,6 +5,7 @@ const form = document.querySelector("form");
 const submit = form.querySelector("[type=submit]");
 
 function formEnabled(enabled) {
+	form.classList.toggle("disabled", !enabled);
 	submit.textContent = (enabled ? "Create!" : "Please wait...");
 	[...form.querySelectorAll("input, button")].forEach($ => $.disabled = !enabled);
 }
