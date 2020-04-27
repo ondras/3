@@ -25,10 +25,11 @@
 	}
 
 	function create_file($name) {
-		exec("make -C .. '${name}'", $output, $code);
+		$escaped = escapeshellarg($name);
+		exec("make -C .. ${escaped}", $output, $code);
 		if ($code != 0) {
 			http_response_code(400);
-			die($output);
+			die(print_r($output, true));
 		}
 		return $name;
 	}
@@ -36,7 +37,6 @@
 	if (array_key_exists("str", $_GET)) {
 		$str = $_GET["str"];
 
-		$str = preg_replace("/[^a-z0-9]/i", "", $str);
 		if (strlen($str) != 3) {
 			http_response_code(400);
 			die("Bad characters");
