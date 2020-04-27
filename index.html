@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<script src="https://unpkg.com/jszip@2/dist/jszip.min.js"></script>
+		<script src="https://unpkg.com/three@0.115.0/build/three.min.js"></script>
+		<script src="https://unpkg.com/three@0.115.0/examples/js/loaders/3MFLoader.js"></script>
+		<script src="https://unpkg.com/three@0.115.0/examples/js/controls/OrbitControls.js"></script>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<main>
+			<p>
+				This page creates 3D models that cast shadows in the shapes of three letters. You can customize the letters,
+				interact with created models and download them for e.g. 3D printing. These <em>shadow cubes</em> are
+				known from the cover of the
+				<a href="https://en.wikipedia.org/wiki/G%C3%B6del,_Escher,_Bach">Gödel, Escher, Bach</a> book.
+			</p>
+			<p>
+				Note that the models are created server-side and the process can take up to 10 seconds, based on many factors.
+				Up to 12 distinct configurations will be generated for every three letters. Please be patient.
+			</p>
+			<p>
+				<form>
+					<input maxlength="3" type="text" value="GEB" name="str" />
+					<button type="submit"></button>
+				</form>
+			</p>
+			<div id="results"></div>
+		</main>
+		<script type="module" src="app.js"></script>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+* {
+	box-sizing: border-box;
+}
+
+body, input, button {
+	font-family: sans-serif;
+}
+
+main {
+	max-width: calc(var(--scene-width) * 2px + 16px);
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+[type=text] {
+	text-align: center;
+	width: 5em;
+	font-size: 20px;
+}
+
+[type=submit] {
+	font-weight: bold;
+	font-size: 20px;
+}
+
+#results {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+}
+
+.box {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 1em 0;
+}
+
+canvas {
+	max-width: 100%;
+}
